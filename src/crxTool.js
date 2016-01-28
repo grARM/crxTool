@@ -19,6 +19,9 @@
 		return;
 	}
 
+	var root = this;
+	var previousCrxTool = root.crxTool;
+
 	/*
 	 *	base
 	 */
@@ -122,7 +125,11 @@
 	var crxTool = {
 		send: communication.send,
 		sendListen: communication.sendListen,
-		getPageValue: getPageScript.getPageValue
+		getPageValue: getPageScript.getPageValue,
+		noConflict: function(){
+			root.crxTool = previousCrxTool;
+			return this;
+		}
 	};
 
 	return crxTool;

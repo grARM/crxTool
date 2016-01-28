@@ -30,5 +30,5 @@ gulp.task('moveToUse', function(){
 
 //默认命令，在cmd中输入gulp后，执行的就是这个任务(压缩js需要在检查js之后操作)
 gulp.task('default', ['jshint'], function() {
-    gulp.start('minifyjs', 'moveToUse'); 
+    gulp.start('minifyjs'/*, 'moveToUse'*/); 
 });
